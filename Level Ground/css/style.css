@@ -1,0 +1,299 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+li, a, button{
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header{
+  height: 450px;
+  background-color: #a7c7cf;
+  color: white;
+  text-align: center;
+}
+
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+}
+
+
+header > nav > ul > li {
+  float: left;
+  padding-right: 20px;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #475569;
+}
+
+.nav-link:hover{
+  color: #482ff7;
+}
+
+.nav-logo {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+header > h1{
+  font-size: 55px;
+  padding: 40px 0;
+}
+
+header > p{
+  padding: 20px 150px;
+}
+
+header > div{
+  padding: 70px 0;
+  color: black;
+}
+
+header > nav > a > button {
+  background-color:grey;
+  padding: 1rem 1.5rem;
+}
+
+body > .why{
+  text-align: center;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body > .why > h2{
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+body > .why > p{
+  margin: 0 150px;
+}
+
+body > .info{
+  height: 500px;
+}
+
+.info > section {
+  height: 500px;
+  width: 50%;
+  color: white;
+  float: left;
+  text-align: center;
+  background-color:#a7c7cf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body > .info > section > p{
+  margin: 0 50px;
+  padding: 20px 0;
+}
+
+.image{
+  border: 1px solid #a7c7cf;
+  height: 200px;
+  width: 300px;
+  background-color: grey;
+  margin: 0 30%;
+}
+
+body > .info > section > a > button{
+  background-color:grey;
+  padding: 1rem 1.5rem;
+}
+
+body > .volunteer{
+  text-align: center;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body > .volunteer > h2{
+  font-size: 30px;
+}
+
+body > .volunteer > p{
+  margin: 0 150px;
+  padding: 20px 0;
+}
+
+body > .volunteer > a > button {
+  padding: 1rem 2rem;
+  background-color: #a7c7cf;
+}
+
+footer{
+  height: 300px;
+}
+
+footer > section{
+  float: left;
+  background-color: darkslateblue;
+  color: white;
+}
+
+footer > .media{
+  height: 250px;
+  width: 70%;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+footer > .media > ul > li{
+  float: left;
+  padding-right: 20px;
+}
+
+footer > .contact{
+  height: 250px;
+  width: 30%;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 130px;
+}
+
+footer > .ending{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media screen and (max-width: 1100px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 
+      0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu.active{
+    left: 0;
+  }
+
+  .nav-item{
+    flex: none;
+    margin: 0 20%;
+  }
+
+  .hamburger{
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-button{
+    display: none;
+  }
+
+  header{
+    height: 700px;
+  }
+
+  body > .info > section {
+    height: 600px;
+    width: 100%;
+  }
+
+  body > .info > section .image{
+    margin: 0 20%;
+  }
+
+  body > .volunteer {
+    height: 400px;
+    width: 100%;
+  }
+
+  footer > .media {
+    width: 100%;
+    text-align: center;
+    float: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer > .contact {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+}
+
